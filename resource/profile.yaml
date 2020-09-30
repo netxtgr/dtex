@@ -1,0 +1,18 @@
+#--- !java.lang.String[][]
+#- !java.lang.String[]
+#  - "ftp://wms_sy:ywWr676e2XterkCi@47.101.71.79:21/netxtgr/0000/IN?backup=true"
+#  - "file://wms_sy:ywWr676e2XterkCi@47.101.71.79:21/netxtgr/0000/IN"
+#- !java.lang.String[]
+#  - "ftp://wms_sy:ywWr676e2XterkCi@47.101.71.79:21/netxtgr/0000/IN?backup=true&backupMode=Weekly"
+#  - "file://wms_sy:ywWr676e2XterkCi@47.101.71.79:21/netxtgr/0000/IN?target=netxtgr/1111/IN"
+
+
+--- 
+#shsd.up: "file://wms_sy:ywWr676e2XterkCi@47.101.71.79:21/netxtgr/0000/IN?target=netxtgr/1111/IN"
+#shsd.dw: "ftp://wms_sy:ywWr676e2XterkCi@47.101.71.79:21/netxtgr/0000/IN?backup=true"
+
+shsd.up: "file://wms_sy:ywWr676e2XterkCi@47.101.71.79:21/netxtgr/1111/IN?target=netxtgr/0000/IN"
+shsd.dw: "ftp://wms_sy:ywWr676e2XterkCi@47.101.71.79:21/netxtgr/1111/IN?backup=true"
+
+#wtsc.up: "file://wms_sy:ywWr676e2XterkCi@47.101.71.79:21/xbear/OUT?target=xtgr/OUT"
+#wtsc.dw: "ftp://wms_sy:ywWr676e2XterkCi@47.101.71.79:21/xbear/OUT?backup=true"

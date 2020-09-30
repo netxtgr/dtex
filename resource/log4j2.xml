@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration strict="true" monitorinterval="300"
+	status="INFO">
+
+	<Properties>
+		<Property name="logs_home" value="logs"></Property>
+
+		<Property name="default_pattern"
+			value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%-5level] %C.%M[%L line] - %m%n" />
+		<Property name="simple_pattern"
+			value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%-5level] %m%n" />
+
+		<Property name="log_file" value="dtex.log" />
+		<Property name="dtex_logs"
+			value="logs/dtex/%d{yyyy-MM-dd}/dtex_%i.log.zip" />
+	</Properties>
+
+	<Appenders>
+		<Console name="Console" target="SYSTEM_OUT">
+			<!-- <PatternLayout pattern="${default_pattern}" />  -->
+			<PatternLayout pattern="${simple_pattern}" />
+			<ThresholdFilter level="INFO" onMatch="ACCEPT" onMismatch="DENY"/>
+		</Console>
+
+		<RollingFile name="DtexRolling"
+			fileName="${logs_home}/${log_file}" filePattern="${dtex_logs}">
+			<PatternLayout pattern="${simple_pattern}" />
+			<Policies>
+				<TimeBasedTriggeringPolicy interval="24"
+					modulate="false" />
+				<SizeBasedTriggeringPolicy size="64 MB" />
+			</Policies>
+			<DefaultRolloverStrategy max="256" />
+		</RollingFile>
+	</Appenders>
+
+	<Loggers>
+		<Root level="DEBUG">
+			<AppenderRef ref="Console" />
+		</Root>
+	</Loggers>
+
+</Configuration>
